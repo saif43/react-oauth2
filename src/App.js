@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import FacebookLoginButton from './FacebookAuth';
+import GoogleLoginButton from './GoogleAuth';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{marginTop: '10em', marginLeft: '10em'}}>
+      <div style={{width: '15em'}}>
+        <GoogleLoginButton />
+      </div>
+      <div style={{width: '15em', marginTop: '5em'}}>
+        <FacebookLoginButton />
+      </div>
     </div>
   );
 }
