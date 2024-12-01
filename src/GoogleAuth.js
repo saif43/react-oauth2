@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 
 const GoogleLoginButton = () => {
-  const GOOGLE_CLIENT_ID = "935445730864-6ovbpdie054o2lk4552fp35vsv952ij3.apps.googleusercontent.com"; // Replace with your Google Client ID
-
+  const REACT_APP_GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID; // Replace with your Google Client ID
+  
   useEffect(() => {
     // Load the Google Sign-In library
+    console.log(process.env);
+    console.log("REACT_APP_GOOGLE_CLIENT_ID ===>", REACT_APP_GOOGLE_CLIENT_ID);
     const loadGoogleScript = () => {
       const script = document.createElement("script");
       script.src = "https://accounts.google.com/gsi/client";
@@ -15,7 +17,7 @@ const GoogleLoginButton = () => {
       script.onload = () => {
         /* Initialize Google Sign-In */
         window.google?.accounts.id.initialize({
-          client_id: GOOGLE_CLIENT_ID,
+          client_id: REACT_APP_GOOGLE_CLIENT_ID,
           callback: onGoogleSignIn,
         });
 
